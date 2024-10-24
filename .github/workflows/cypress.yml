@@ -1,0 +1,35 @@
+name: Run Cypress Tests
+
+# Define when this workflow should be triggered
+on:
+  # Schedule the workflow to run every day at 10:00 AM UTC
+  schedule:
+    - cron: '35 15 * * *'
+
+  # You can also trigger the workflow manually or when pushing to the repository
+  push:
+    branches:
+      - master
+
+jobs:
+  cypress-tests:
+    runs-on: ubuntu-latest  # The environment the tests will run on
+
+    steps:
+      # Step 1: Checkout the code from the GitHub repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Node.js (specify the Node.js version)
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run Cypress tests
+      - name: Run Cypress tests
+        run: npx cypress run
