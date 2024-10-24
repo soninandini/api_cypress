@@ -4,7 +4,7 @@ name: Run Cypress Tests
 on:
   # Schedule the workflow to run every day at 10:00 AM UTC
   schedule:
-    - cron: '40 18 * * *'
+    - cron: '15 13 * * *'
 
   # You can also trigger the workflow manually or when pushing to the repository
   push:
