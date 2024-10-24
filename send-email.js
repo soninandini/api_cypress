@@ -29,7 +29,7 @@
 // module.exports = sendFailureEmail;
 
 const nodemailer = require('nodemailer');
-require('dotenv').config(); // Loads environment variables from .env
+// Loads environment variables from .env
 
 function sendFailureEmail(errorDetails = 'No error details provided') {
   // Make sure the environment variables are loaded
