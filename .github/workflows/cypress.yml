@@ -4,7 +4,7 @@ name: Run Cypress Tests
 on:
   # Schedule the workflow to run every day at 10:00 AM UTC
   schedule:
-    - cron: '55 16 * * *'
+    - cron: '40 18 * * *'
 
   # You can also trigger the workflow manually or when pushing to the repository
   push:
@@ -32,4 +32,7 @@ jobs:
 
       # Step 4: Run Cypress tests
       - name: Run Cypress tests
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
         run: npx cypress run
