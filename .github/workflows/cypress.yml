@@ -2,7 +2,7 @@ name: Run Cypress Tests
 
 # Define when this workflow should be triggered
 on:
-  # Schedule the workflow to run every day at 10:00 AM UTC
+  # Schedule the workflow to run every day at 11:00 AM UTC
   schedule:
     - cron: '30 5 * * *'
 
